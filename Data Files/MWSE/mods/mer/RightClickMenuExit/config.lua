@@ -29,6 +29,7 @@ config.buttonMapping = {
     { menu = tes3ui.registerID("MenuDialog"), button = tes3ui.registerID("MenuDialog_button_bye") },
     { menu = tes3ui.registerID("MenuContents"), button = tes3ui.registerID("MenuContents_closebutton") },
     { menu = tes3ui.registerID("CustomMessageBox"), button = "CustomMessageBox_CancelButton"},
+    { menu = tes3ui.registerID("MenuMessage"), button = "MenuMessage_CancelButton"},
     { menu = tes3ui.registerID("MenuInventory"), button = "none"},
 }
 
