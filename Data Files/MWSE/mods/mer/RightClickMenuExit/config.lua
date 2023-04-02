@@ -1,4 +1,3 @@
-local config = {}
 local config = {
     ["MenuInventorySelect"] = { closeButton = "MenuInventorySelect_button_cancel" },
     ["MenuMagicSelect"] = { closeButton = "MenuMagicSelect_button_cancel" },
@@ -29,6 +28,7 @@ local config = {
     ["MenuBarter"] = { closeButton = "MenuBarter_Cancelbutton" },
     ["MenuDialog"] = { closeButton = "MenuDialog_button_bye" },
     ["MenuContents"] = { closeButton = "MenuContents_closebutton" },
+    ["MenuInventory"] = {}
 }
 
 return config

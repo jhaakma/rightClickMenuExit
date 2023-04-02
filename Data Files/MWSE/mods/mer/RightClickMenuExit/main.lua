@@ -19,6 +19,9 @@ local function closeMenu()
                     button:triggerEvent("mouseClick")
                     return
                 end
+            else
+                ---A non registered menu sits on top, cancel
+                return
             end
         end
     end
