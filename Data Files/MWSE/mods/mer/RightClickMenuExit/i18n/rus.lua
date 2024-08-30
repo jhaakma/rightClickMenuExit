@@ -1,6 +1,6 @@
 return {
     ModName = "Выход из меню правым кликом",
-    ModDescription = "Выход из меню правым кликом.",
+    ModDescription = "Выход из любых меню правой кнопкой мыши.",
     ReleaseHistory = "История версий",
     BuyMeACoffee = "Купите мне кофе",
     MadeBy = "Сделано Merlord",
@@ -11,6 +11,6 @@ return {
     EnableRightClickExitDescription = "Включить выход из меню правым кликом.",
     PlayMenuSound = "Звук меню",
     PlayMenuSoundDescription = "Включить или отключить звук меню при выходе из меню.",
-    LogLevel = "Уровень логирования",
-    LogLevelDescription = "Установить уровень логирования для всех логгеров.",
+    LogLevel = "Уровень журнала",
+    LogLevelDescription = "Установите уровень ведения журнала событий mwse.log.",
 }
