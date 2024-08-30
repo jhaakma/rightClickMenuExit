@@ -1,0 +1,16 @@
+return {
+    ModName = "Выход из меню правым кликом",
+    ModDescription = "Выход из меню правым кликом.",
+    ReleaseHistory = "История версий",
+    BuyMeACoffee = "Купите мне кофе",
+    MadeBy = "Сделано Merlord",
+    Links = "Ссылки",
+    Credits = "Авторы",
+    Settings = "Настройки",
+    EnableRightClickExit = "Включить",
+    EnableRightClickExitDescription = "Включить выход из меню правым кликом.",
+    PlayMenuSound = "Звук меню",
+    PlayMenuSoundDescription = "Включить или отключить звук меню при выходе из меню.",
+    LogLevel = "Уровень логирования",
+    LogLevelDescription = "Установить уровень логирования для всех логгеров.",
+}
