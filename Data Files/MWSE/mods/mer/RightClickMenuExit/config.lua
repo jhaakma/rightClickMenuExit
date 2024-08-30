@@ -1,34 +1,27 @@
-local config = {
-    ["MenuInventorySelect"] = { closeButton = "MenuInventorySelect_button_cancel" },
-    ["MenuMagicSelect"] = { closeButton = "MenuMagicSelect_button_cancel" },
-    ["MenuQuantity"] = { closeButton = "MenuQuantity_buttoncancel" },
-    ["MWSE:ModConfigMenu"] = { closeButton = "MWSE:ModConfigMenu_Close" },
-    ["MenuVideo"] = { closeButton = "MenuVideo_Okbutton" },
-    ["MenuAudio"] = { closeButton = "MenuAudio_Okbutton" },
-    ["MenuPrefs"] = { closeButton = "MenuPrefs_Okbutton" },
-    ["MenuSave"] = { closeButton = "MenuSave_Cancelbutton" },
-    ["MenuLoad"] = { closeButton = "MenuLoad_Okbutton" },
-    ["MenuOptions"] = { closeButton = "MenuOptions_Return_container" },
-    ["MenuRestWait"] = { closeButton = "MenuRestWait_cancel_button" },
-    ["MenuQuick"] = { closeButton = "MenuQuick_button_cancel" },
-    ["MenuScroll"] = { closeButton = "MenuScroll_Close" },
-    ["MenuJournal"] = { closeButton = "MenuBook_button_close" },
-    ["MenuBook"] = { closeButton = "MenuBook_button_close" },
-    ["MenuAlchemy"] = { closeButton = "MenuAlchemy_cancel_button" },
-    ["MenuEnchantment"] = { closeButton = "MenuEnchantment_Cancelbutton" },
-    ["MenuSpellmaking"] = { closeButton = "MenuSpellmaking_Cancelbutton" },
-    ["MenuServiceTravel"] = { closeButton = "MenuServiceTravel_Okbutton" },
-    ["MenuServiceTraining"] = { closeButton = "MenuServiceTraining_Okbutton" },
-    ["MenuServiceSpells"] = { closeButton = "MenuServiceSpells_Okbutton" },
-    ["MenuServiceRepair"] = { closeButton = "MenuServiceRepair_Okbutton" },
-    ["MenuRepair"] = { closeButton = "MenuRepair_Okbutton" },
-    ["MenuPersuasion"] = { closeButton = "MenuPersuasion_Okbutton" },
-    ["CustomMessageBox"] = { closeButton = "CustomMessageBox_CancelButton"},
-    ["MenuMessage"] = { closeButton = "MenuMessage_CancelButton"},
-    ["MenuBarter"] = { closeButton = "MenuBarter_Cancelbutton" },
-    ["MenuDialog"] = { closeButton = "MenuDialog_button_bye" },
-    ["MenuContents"] = { closeButton = "MenuContents_closebutton" },
-    ["MenuInventory"] = {}
+---@class RCME.Config
+local config = {}
+
+---Table of registered buttons
+---@type table<string, {closeButton: string}>
+config.registeredButtons = {}
+
+config.metadata = toml.loadMetadata("Right Click Menu Exit")
+
+---@class RCME.Config.MCM
+local mcmDefault = {
+    ---Enable right click to exit menus
+    enableRightClickExit = true,
+    ---The log level for the mod. One of "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL"
+    logLevel = "INFO",
+    ---Enable "Menu Click" sound when exiting a menu
+    enableClickSound = true,
 }
+
+---@type RCME.Config.MCM
+config.mcm = mwse.loadConfig(config.metadata.package.name, mcmDefault)
+
+config.save = function()
+    mwse.saveConfig(config.metadata.package.name, config.mcm)
+end
 
 return config

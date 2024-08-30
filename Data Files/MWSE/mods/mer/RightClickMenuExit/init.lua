@@ -1,15 +1,18 @@
 local Interop = {}
-local config = require("mer.RightClickMenuExit.config")
+local common = require("mer.RightClickMenuExit.common")
+local config = common.config
+local logger = common.createLogger("Interop")
 
+---@class RightClickMenuExit.registerMenu.params
+---@field menuId string
+---@field buttonId string
+
+---@param e RightClickMenuExit.registerMenu.params
 Interop.registerMenu = function(e)
     assert(e.menuId, "menuId is required")
     assert(e.buttonId, "buttonId is required")
-    mwse.log("[RightClickMenuExit] Registering Menu %s with button %s", e.menuId, e.buttonId)
-    -- table.insert(config.buttonMapping, (1), {
-    --     menu = e.menuId,
-    --     button = e.buttonId
-    -- })
-    config[e.menuId] = {
+    logger:debug("Registering menu %s with button %s", e.menuId, e.buttonId)
+    config.registeredButtons[e.menuId] = {
         closeButton = e.buttonId
     }
 end
