@@ -29,6 +29,7 @@ local buttons = {
     { menuId = "MenuBarter", buttonId =  "MenuBarter_Cancelbutton" },
     { menuId = "MenuDialog", buttonId =  "MenuDialog_button_bye" },
     { menuId = "MenuContents", buttonId =  "MenuContents_closebutton" },
+    { menuId = "MenuInventory" }
 }
 
 for _, data in pairs(buttons) do
