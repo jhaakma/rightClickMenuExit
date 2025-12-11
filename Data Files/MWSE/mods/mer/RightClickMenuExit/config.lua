@@ -15,6 +15,8 @@ local mcmDefault = {
     logLevel = "INFO",
     ---Enable "Menu Click" sound when exiting a menu
     enableClickSound = true,
+    ---Re-open the inventory menu if it was open when closing another menu
+    reopenInventory = true,
 }
 
 ---@type RCME.Config.MCM

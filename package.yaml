@@ -1,0 +1,8 @@
+mod_name: Right Click Menu Exit
+metadata_path: Data Files/Right Click Menu Exit-metadata.toml
+repo_path: F:/Games/_RELEASES/RightClickMenuExit/master
+archive_path: F:/Games/_RELEASES/RightClickMenuExit/RightClickMenuExit.7z
+morrowind_path: C:/games/Morrowind installs/Vanilla+/Morrowind
+data_files:
+  - MWSE/mods/mer/RightClickMenuExit\
+  - Right Click Menu Exit-metadata.toml

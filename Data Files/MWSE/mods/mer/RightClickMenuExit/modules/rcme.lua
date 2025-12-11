@@ -2,6 +2,40 @@ local common = require("mer.RightClickMenuExit.common")
 local logger = common.createLogger("buttons")
 local config = common.config
 
+local MAIN_MENUS = {
+    "MenuMulti",
+    "MenuStat",
+    "MenuInventory",
+    "MenuMagic",
+    "MenuMap",
+}
+
+local function checkAndReOpenInventory()
+    if not config.mcm.reopenInventory then return end
+    local inventoryMenu = tes3ui.findMenu("MenuInventory")
+    -- if its open, we'll need to open  it again after closing
+    if inventoryMenu and inventoryMenu.visible then
+        timer.delayOneFrame(function()
+            for _, menuId in ipairs(MAIN_MENUS) do
+                local menuToOpen = tes3ui.findMenu(menuId)
+                if menuToOpen and not menuToOpen.visible then
+                    logger:debug("  * reopening %s", menuId)
+                    menuToOpen.visible = true
+                end
+            end
+            tes3ui.enterMenuMode("MenuInventory")
+        end)
+    end
+end
+
+local function clickButton(button)
+    if config.mcm.enableClickSound then
+        logger:debug("  * playing sound")
+        tes3.worldController.menuClickSound:play()
+    end
+    button:triggerEvent("mouseClick")
+end
+
 local function closeMenu()
     local menuOnTop = tes3ui.getMenuOnTop()
     if not menuOnTop then
@@ -22,11 +56,8 @@ local function closeMenu()
                 local button = menu:findChild(menuData.closeButton)
                 if menuData.closeButton and button and button.visible then
                     logger:debug("  * has close button, closing menu")
-                    if config.mcm.enableClickSound then
-                        logger:debug("  * playing sound")
-                        tes3.worldController.menuClickSound:play()
-                    end
-                    button:triggerEvent("mouseClick")
+                    clickButton(button)
+                    checkAndReOpenInventory()
                     return
                 end
             else

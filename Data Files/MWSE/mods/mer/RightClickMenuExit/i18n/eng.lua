@@ -13,6 +13,8 @@
 ---@field PlayMenuSoundDescription fun():string
 ---@field LogLevel fun():string
 ---@field LogLevelDescription fun():string
+---@field ReopenInventory fun():string
+---@field ReopenInventoryDescription fun():string
 
 
 return {
@@ -30,4 +32,6 @@ return {
     PlayMenuSoundDescription = "Enable or disable the menu click sound when exiting menus.",
     LogLevel = "Log Level",
     LogLevelDescription = "Set the logging level for all Loggers.",
+    ReopenInventory = "Re-open Inventory",
+    ReopenInventoryDescription = "Re-open the inventory menu if it was open when closing another menu.",
 }

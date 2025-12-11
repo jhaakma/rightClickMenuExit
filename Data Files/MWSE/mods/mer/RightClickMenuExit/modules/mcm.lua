@@ -70,6 +70,15 @@ local function registerMCM()
         }
     }
 
+    page:createYesNoButton{
+        label = messages.ReopenInventory(),
+        description = messages.ReopenInventoryDescription(),
+        variable = mwse.mcm.createTableVariable{
+            id = "reopenInventory",
+            table = config.mcm
+        }
+    }
+
     page:createDropdown{
         label = messages.LogLevel(),
         description = messages.LogLevelDescription(),
@@ -83,9 +92,11 @@ local function registerMCM()
         variable =  mwse.mcm.createTableVariable{ id = "logLevel", table = config.mcm},
         callback = function(self)
             for _, logger in pairs(common.loggers) do
-                logger:setLogLevel(self.variable.value)
+                logger:setLevel(self.variable.value)
             end
         end
     }
+
+
 end
 registerMCM()

@@ -13,4 +13,6 @@ return {
     PlayMenuSoundDescription = "Activer ou désactiver le son du clic du menu lors de la sortie des menus.",
     LogLevel = "Niveau des logs.",
     LogLevelDescription = "Définir le niveau des logs pour to us less enregistreurs.",
+    ReopenInventory = "Rouvrir l'inventaire",
+    ReopenInventoryDescription = "Rouvrir le menu de l'inventaire s'il était ouvert lors de la fermeture d'un autre menu.",
 }
